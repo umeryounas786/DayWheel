@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags always come first -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<!-- Bootstrap CSS -->
+		<link href="lib/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+		<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">-->
+		<!-- App Style CSS  -->
+		<link href="css/style.css" rel="stylesheet" type="text/css">
+		<!-- App Frame work CSS  -->
+		<link href="css/framework.css" rel="stylesheet" type="text/css">
+		<!-- Font Awesome CSS  -->
+		<link href="lib/css/font-awesome.css" rel="stylesheet" type="text/css">
+		<!-- Animate CSS  -->
+		<link href="lib/css/animate.css" rel="stylesheet" type="text/css">
+		<link href="lib/css/toaster.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript" src="lib/js/jquery-2.2.3.min.js"></script>
+		<script type="text/javascript" src="lib/js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="lib/js/toaster.js"></script>
+		<script type="text/javascript" src="lib/js/jqueryui.js"></script>
+		<script type="text/javascript" src="scripts/viewmodels/framework-plugins.js"></script>
+		<script type="text/javascript" src="scripts/services/datasource-service.js"></script>
+		<script type="text/javascript" src="scripts/viewmodels/custom.js"></script>
+		<script type="text/javascript" src="scripts/viewmodels/user.js"></script>
+	</head>
+	<body class="dual-sidebar">
+		<div id="preloader" style="display: none;">
+			<div id="status" style="display: none;">
+				<div class="preloader-logo"></div>
+				<p class="center-text smaller-text">
+					We're loading the content, give us a second. This won't take long!
+				</p>
+			</div>
+		</div>
+		<div class="gallery-fix"></div>
+		<!-- Important for all pages that have galleries or portfolios -->
+		<div id="header" class="dashboard header">
+			<div class="header-elements">
+				<!-- <a href="#" class="header-logo"></a>-->
+				<h3 class="my-header">About US</h3>
+				<a href="#" class="header-icon-1 open-right-sidebar"><i class="fa fa-envelope-o"></i></a>
+				<a href="#" class="header-icon-2 open-left-sidebar"><i class="fa fa-navicon"></i></a>
+				<a href="#" class="header-icon-3 header-menu disabled"><i class="fa fa-star"></i></a>
+			</div>
+			<div class="navigation">
+				<a class="navigation-item navigation-item-active" href="">
+				<i class="fa fa-home"></i>
+				<em>Homepage</em>
+				<i class="fa fa-circle"></i>
+				</a>
+				<a class="navigation-item" href="#">
+				<i class="fa fa-cog"></i>
+				<em>Features</em>
+				<i class="fa fa-circle"></i>
+				</a>
+			</div>
+		</div>
+		<div class="all-elements">
+			<div class="snap-drawers">
+				<!--Left Sidebar-->
+				<div class="snap-drawer snap-drawer-left">
+					<div class="sidebar-header-left">
+						<a class="sidebar-logo" href="#"></a>
+					</div>
+					<div class="sidebar-menu">
+						<a class="menu-item" href="dashboard.html">
+						<i class="fa fa-clock-o"></i>
+						<em>MY Day Wheel</em>
+						<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item" href="scheduler.html">
+						<i class="fa fa-calendar"></i>
+						<em>My Schedule</em>
+						<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item" href="week-in-review.html">
+						<i class="fa fa-thumbs-up"></i>
+						<em>My week in review</em>
+						<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item" href="events.html">
+						<i class="fa fa-newspaper-o"></i>
+						<em>Daywheel Events</em>
+						<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item" href="schedule-events.html">
+						<i class="fa fa-newspaper-o"></i>
+						<em>Schedule Events</em>
+						<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item" href="goals.html">
+						<i class="fa fa-bullseye"></i>
+						<em>Goals</em>
+						<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item" href="thoughts.html">
+						<i class="fa fa-comments"></i>
+						<em>Thoughts</em>
+						<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item" href="self-ratings.html">
+						<i class="fa fa-star"></i>
+						<em>Self Ratings</em>
+						<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item" href="vote.html">
+						<i class="fa fa-pie-chart"></i>
+						<em>Vote</em>
+						<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item" href="money.html">
+						<i class="fa fa-money"></i>
+						<em>Money</em>
+						<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item" href="personaldetails.html">
+						<i class="fa fa-user"></i>
+						<em>Personal Details</em>
+						<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item" href="changepassword.html">
+						<i class="fa fa-lock"></i>
+						<em>Change Password</em>
+						<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item menu-item-active" href="about.html">
+						<i class="fa fa-info-circle"></i>
+						<em>About</em>
+						<i class="fa fa-circle"></i>
+						</a>
+						<a id = "logout" class="menu-item" href="javascript:void(0)">
+						<i class="fa fa-power-off"></i>
+						<em>Logout</em>
+						<i class="fa fa-circle"></i>
+						</a>
+					</div>
+				</div>
+				<!--Right Sidebar -->
+				<div class="snap-drawer snap-drawer-right">
+					<div class="sidebar-header-right">
+						<a class="sidebar-logo" href="#"></a>
+					</div>
+					<p class="sidebar-divider">Let's get social</p>
+					<div class="sidebar-menu">
+						<a class="menu-item" href="https://www.facebook.com/DayWheel/">
+						<i class="fa fa-facebook"></i>
+						<em>Facebook</em>
+						</a>
+						<a class="menu-item" href="https://twitter.com/MyDayWheel">
+						<i class="fa fa-twitter"></i>
+						<em>Twitter</em>
+						</a>
+						<a class="menu-item" href="https://www.instagram.com/daywheel/">
+						<i class="fa fa-instagram"></i>
+						<em>Instagram</em>
+						</a>
+					</div>
+					<p class="sidebar-divider">Send an email</p>
+					<div class="container no-bottom">
+						<div class="sidebar-form contact-form no-bottom">
+							<em>
+							Your message is important to us and we reply to all of them in less than 48 hours.
+							</em>
+							<div class="formSuccessMessageWrap" id="formSuccessMessageWrap" style="display: none;">
+								Awesome! We'll get back to you!
+							</div>
+							<form action="/contact.php" method="post" class="contactForm" id="contactForm">
+								<div>
+									<div class="formValidationError" id="contactNameFieldError" style="display: none;">Name is required!</div>
+									<div class="formValidationError" id="contactEmailFieldError" style="display: none;">Mail address required!</div>
+									<div class="formValidationError" id="contactEmailFieldError2" style="display: none;">Mail address must be valid!</div>
+									<div class="formValidationError" id="contactMessageTextareaError" style="display: none;">Message field is empty!</div>
+									<div class="formFieldWrap">
+										<input onfocus="if (this.value=='Name') this.value =''" onblur="if (this.value=='') this.value ='Name'" type="text" name="contactNameField" value="Name" class="contactField requiredField" id="contactNameField">
+									</div>
+									<div class="formFieldWrap">
+										<input onfocus="if (this.value=='Email') this.value = ''" onblur="if (this.value=='') this.value ='Email'" type="text" name="contactEmailField" value="Email" class="contactField requiredField requiredEmailField" id="contactEmailField">
+									</div>
+									<div class="formTextareaWrap">
+										<textarea onfocus="if (this.value=='Message') this.value = ''" onblur="if (this.value=='') this.value ='Message'" name="contactMessageTextarea" class="contactTextarea requiredField" id="contactMessageTextarea">Message</textarea>
+									</div>
+									<div class="formFieldWrap">
+										<input onfocus="if (this.value=='Contact Number') this.value = ''" onblur="if (this.value=='') this.value ='Contact Number'" type="text" name="contactNumberField" value="Contact Number" class="contactField requiredField requiredEmailField" id="contactNumberField">
+									</div>
+									<div class="formSubmitButtonErrorsWrap">
+										<input type="submit" class="buttonWrap button button-green contactSubmitButton" id="contactSubmitButton" value="SUBMIT" data-formid="contactForm">
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+					<p class="sidebar-divider">Contact Us</p>
+					<div class="sidebar-menu">
+						<a class="menu-item" href="tel:(678) 508-6283">
+						<i class="fa fa-phone"></i>
+						<em>Call Us</em>
+						</a>
+						<a class="menu-item" href="sms:(678) 508-6283">
+						<i class="fa fa-comment-o"></i>
+						<em>Text Us</em>
+						</a>
+						<a class="menu-item" href="mailto:adminsupport@mydaywheel.com">
+						<i class="fa fa-envelope-o"></i>
+						<em>Mail Us</em>
+						</a>
+					</div>
+				</div>
+				<div id="content" class="snap-content">
+					<div class="content" style="padding-left: 20px; padding-right: 20px;">
+						<div class="container1 heading-style-5">
+							<h4 class="heading-title">Welcome to the DayWheel™ !</h4>
+							<i class="fa fa-star heading-icon"></i>
+							<div class="line bg-black"></div>
+							<p class="heading-subtitle">
+								DAYWHEEL is a process improvement consulting firm with over 20 collective years of experience in technology strategy, technology execution, process improvement and human capital mobilization. Our firm utilizes a unique process mapping working session (Vision Mapping) to quickly identify key areas impacting task execution times, resource allocations/constraints, financial constraints and process gaps. Compass’ “Vision Mapping” is able to extract a large amount of information and point of views from leadership and management’s participation in an amazingly short period of time. Within hours of starting the “Vision Mapping” process, Compass is able to have an overlay and logic model based on management’s perspective and insights of its operations. This simulates a verbal and visual operations assessment in a matter of hours.
+							</p>
+							<a href="about.html" class="center-text">Find out more</a>
+						</div>
+						<div class="decoration"></div>
+						<div class="container-fullscreen heading-style-3 bg-5">
+							<h4 class="heading-title">Service Offering !</h4>
+							<em class="heading-subtitle">See what a difference a DayWheel™ makes!</em>
+							<div class="overlay bg-black"></div>
+						</div>
+						<div class="container-fullscreen" style="margin-left: -20px; width: 342px;">
+							<div class="one-half-responsive">
+								<p class="image-column-left">
+									<img src="images/3s.jpg" alt="img">
+									<strong>Vision Quest (Life Mapping)</strong>
+									<em>
+									DayWheel’s signature workshop series that explores the details and inner workings of personal and individual development
+									</em>
+								</p>
+							</div>
+							<div class="decoration hide-if-responsive"></div>
+							<div class="one-half-responsive last-column">
+								<p class="image-column-right">
+									<img src="images/5s.jpg" alt="img">
+									<strong>Visual Writing</strong>
+									<em>
+									An innovative strategy capturing process and methodology, guaranteed to improve efficiency, productivity, team building and continuity
+									</em>
+								</p>
+							</div>
+							<div class="decoration"></div>
+							<div class="one-half-responsive">
+								<p class="image-column-left">
+									<img src="images/6s.jpg" alt="img">
+									<strong>Coaching</strong>
+									<em>
+									Business Coaching, Life Coaching, Executive Coaching, Staff Coaching
+									</em>
+								</p>
+							</div>
+							<div class="decoration hide-if-responsive"></div>
+							<div class="one-half-responsive last-column">
+								<p class="image-column-right">
+									<img src="images/8s.jpg" alt="img">
+									<strong>Training</strong>
+									<em>
+									Versatile Training Group, Staff Training Customer Support, Product/Service Training, Financial Literacy
+									</em>
+								</p>
+							</div>
+							<div class="decoration"></div>
+							<div class="one-half-responsive">
+								<p class="image-column-left">
+									<img src="images/6s.jpg" alt="img">
+									<strong>Consulting</strong>
+									<em>
+									Thorough Strategic Planning, Market/Industry Trends And Analysis, Alliances/Partnerships
+									</em>
+								</p>
+							</div>
+							<div class="decoration hide-if-responsive"></div>
+							<div class="one-half-responsive last-column">
+								<p class="image-column-right">
+									<img src="images/8s.jpg" alt="img">
+									<strong>Management</strong>
+									<em>
+									Operations Management And Support, Product/Service Support And Management, Project/Program Management
+									</em>
+								</p>
+							</div>
+							<div class="decoration"></div>
+						</div>
+						<div class="container-fullscreen heading-style-3 bg-5">
+							<h4 class="heading-title">Meet our Executive Team!</h4>
+							<em class="heading-subtitle">Get more from us, get social!</em>
+							<div class="overlay bg-black"></div>
+						</div>
+						<div class="staff-slider">
+							<div class="staff-slider-no-transition" data-snap-ignore="true">
+								<div class="staff-item">
+									<img class="scale-hover" src="images/3s.jpg" alt="img">
+									<h3>Michael Fleming</h3>
+									<em class="color-red-dark">C.E.O. & Founder, DayWheel, LLC.</em>
+									<em class="color-red-dark small-text">C.E.O. & Founder, King Streets Management Group (KSMG)</em>
+									<div class="staff-icons staff-icons-three">
+										<a class="social-ball twitter-color scale-hover" href="https://www.linkedin.com/in/michael-fleming-81b97016"><i class="fa fa-linkedin"></i></a>
+										<a class="social-ball phone-color scale-hover" href="tel:(678) 508-6283"><i class="fa fa-phone"></i></a>
+										<a class="social-ball twitter-color scale-hover" href="mailto:Michael.fleming@kingstreets.com"><i class="fa fa-envelope"></i></a>
+									</div>
+								</div>
+								<div class="staff-item">
+									<img class="scale-hover" src="images/5s.jpg" alt="img">
+									<h3> Dionne Longworth</h3>
+									<em class="color-green-dark">C.E.O. & Founder, ANSUN Management, LLC.</em>
+									<em class="color-green-dark small-text"> Executive Vice President, King Streets Management Group (KSMG)</em>
+									<div class="staff-icons staff-icons-three">
+										<a class="social-ball twitter-color scale-hover" href="https://www.linkedin.com/in/dionnelongworth"><i class="fa fa-linkedin"></i></a>
+										<a class="social-ball phone-color scale-hover" href="tel:(678) 508-6475"><i class="fa fa-phone"></i></a>
+										<a class="social-ball twitter-color scale-hover" href="mailto:Dionne.longworth@kingstreets.com"><i class="fa fa-envelope"></i></a>
+									</div>
+								</div>
+								<div class="staff-item">
+									<img class="scale-hover" src="images/7s.jpg" alt="img">
+									<h3>Lester Wright</h3>
+									<em class="color-orange-dark">C.E.O. & Founder, The Lester Wright Group, LLC.</em>
+									<em class="color-orange-dark small-text"> Executive Sales Director, King Streets Management Group (KSMG)</em>
+									<div class="staff-icons staff-icons-three">
+										<a class="social-ball twitter-color scale-hover" href="https://www.linkedin.com/in/lester-wright-73b350a"><i class="fa fa-linkedin"></i></a>
+										<a class="social-ball phone-color scale-hover" href="tel:(770) 560-7858"><i class="fa fa-phone"></i></a>
+										<a class="social-ball twitter-color scale-hover" href="mailto:Lester.wright@kingstreets.com"><i class="fa fa-envelope"></i></a>
+									</div>
+								</div>
+								<div class="staff-item">
+									<img class="scale-hover" src="images/2s.jpg" alt="img">
+									<h3>Shawn D. Lovings</h3>
+									<em class="color-orange-dark">C.E.O. & of Core Consulting and Marketing Group (CCMG)</em>
+									<em class="color-orange-dark small-text">Marketing and Advertising Director for KingStreets</em>
+									<div class="staff-icons staff-icons-three">
+										<a class="social-ball twitter-color scale-hover" href="https://www.linkedin.com/in/shawn-lovings-5a79366"><i class="fa fa-linkedin"></i></a>
+										<!--  <a class="social-ball phone-color scale-hover" href="tel:(770) 560-7858"><i class="fa fa-phone"></i></a>-->
+										<a class="social-ball twitter-color scale-hover" href="mailto:slovings@kingstreets.com"><i class="fa fa-envelope"></i></a>
+									</div>
+								</div>
+							</div>
+							<a class="next-staff-slider" href="#"><i class="fa fa-angle-right"></i></a>
+							<a class="prev-staff-slider" href="#"><i class="fa fa-angle-left"></i></a>
+						</div>
+						<div class="decoration"></div>
+						<div class="footer">
+							<p class="center-text">Copyright 2016. Mydaywheel All rights reserved.</p>
+							<!--<p class="center-text">Powered by <a href="https://wwww.equatortek.com" target="_blank">www.equatortek.com</a>.</p>-->
+							<div class="footer-icons">
+								<a href="https://www.facebook.com/DayWheel/" class="scale-hover facebook-color social-ball"><i class="fa fa-facebook"></i></a>
+								<a href="https://twitter.com/MyDayWheel" class="scale-hover twitter-color social-ball"><i class="fa fa-twitter"></i></a>
+								<a href="https://www.instagram.com/daywheel/" class="scale-hover google-color social-ball"><i class="fa fa-instagram"></i></a>
+								<a href="#" class="scale-hover back-to-top bg-green-dark social-ball"><i class="fa fa-angle-up"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<a href="#" class="back-to-top-badge"><i class="fa fa-long-arrow-up"></i></a>
+		</div>
+		<div id="footer-fixed" class="not-active"></div>
+		<script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="scripts/viewmodels/geolocation.js"></script>
+		<script type="text/javascript" src="scripts/viewmodels/notification.js"></script>
+		<script>
+			document.addEventListener("deviceready", onDeviceReady, false);
+			function onDeviceReady()
+			{
+			//get location
+			     onDeviceLocation();
+			//get notitfication
+			getNotification();
+			}
+		</script>
+	</body>
+</html>

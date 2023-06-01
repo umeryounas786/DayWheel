@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="msapplication-tap-highlight" content="no" />
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+		<!-- Bootstrap CSS Files -->
+		<link href="lib/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+		<!-- App Style CSS  -->
+		<link href="css/style.css" rel="stylesheet" type="text/css">
+		<!-- App Frame work CSS  -->
+		<link href="css/framework.css" rel="stylesheet" type="text/css">
+		<!-- Font Awesome CSS  -->
+		<link href="lib/css/font-awesome.css" rel="stylesheet" type="text/css">
+		<!-- Animate CSS  -->
+		<link href="lib/css/animate.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript" src="lib/js/jquery-2.2.3.min.js"></script>
+		<script type="text/javascript" src="lib/js/jquery.cookie.js"></script>
+		<title>Day Wheel</title>
+	</head>
+	<body class="dual-sidebar">
+		<div class="container-fluid">
+			<div id="offline-loader">
+				<div id="offline-status">
+					<div class="preloader-logo"></div>
+					<h3 class="center-text"> You are offline</h3>
+					<p class="center-text smaller-text">
+						Wi-Fi and mobile data are unavailable.
+					</p>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="cordova.js"></script>
+		<!--<script type="text/javascript" src="js/index.js"></script>-->
+		<script type="text/javascript" src="lib/js/bootstrap-notify.min.js"></script>
+		<script type="text/javascript" src="scripts/services/datasource-service.js"></script>
+		<script type="text/javascript" src="scripts/viewmodels/user.js"></script>
+		<script>
+			document.addEventListener("deviceready", onDeviceReady, false);
+			// Cordova is ready
+			function onDeviceReady() {
+			
+			    checkConnection()
+			}
+			
+			function checkConnection() {
+			    networkState = navigator.connection.type;
+			    //  alert(networkState);
+			    var states = {};
+			    states[Connection.UNKNOWN] = 'Unknown connection';
+			    states[Connection.ETHERNET] = 'Ethernet connection';
+			    states[Connection.WIFI] = 'WiFi connection';
+			    states[Connection.CELL_2G] = 'Cell 2G connection';
+			    states[Connection.CELL_3G] = 'Cell 3G connection';
+			    states[Connection.CELL_4G] = 'Cell 4G connection';
+			    states[Connection.CELL] = 'Cell generic connection';
+			    states[Connection.NONE] = 'No network connection';
+			    //  alert('Connection type: ' + states[networkState]);
+			    if(networkState=="none")
+			    {
+			       setTimeout("location.reload(true);",1000);
+			
+			    }
+			    else
+			    {
+			         window.location.href = 'index.html';
+			    }
+			
+			
+			}
+			
+			/*$(document).ready(function() {
+			
+			 networkState = navigator.connection.type;
+			 var states = {};
+			 states[Connection.UNKNOWN] = 'Unknown connection';
+			 states[Connection.ETHERNET] = 'Ethernet connection';
+			 states[Connection.WIFI] = 'WiFi connection';
+			 states[Connection.CELL_2G] = 'Cell 2G connection';
+			 states[Connection.CELL_3G] = 'Cell 3G connection';
+			 states[Connection.CELL_4G] = 'Cell 4G connection';
+			 states[Connection.CELL] = 'Cell generic connection';
+			 states[Connection.NONE] = 'No network connection';
+			 alert('Connection type: ' + states[networkState]);
+			
+			 var state = navigator.connection.type;
+			 console.log(":State"+state);
+			 if (state == window.Connection.NONE)
+			 {
+			 alert("OFFLine")
+			 }
+			 else
+			 {
+			 alert("ONLine")
+			 }
+			
+			 var username=localStorage.getItem("username");
+			 var password=localStorage.getItem("password")
+			
+			 if(username!=undefined && password!=undefined)
+			 {
+			 $("#preloader").css('display','block');
+			 $("#status").css('display','block');
+			 $("#username").val(username);
+			 $("#password").val(password);
+			 $("#login").trigger('click');
+			
+			 }
+			 });*/
+		</script>
+		<!--<script type="text/javascript">
+			app.initialize();
+			</script>-->
+		<script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="scripts/viewmodels/geolocation.js"></script>
+		<script type="text/javascript" src="scripts/viewmodels/notification.js"></script>
+		<script>
+			document.addEventListener("deviceready", onDeviceReady, false);
+			function onDeviceReady()
+			{
+			//get location
+			     onDeviceLocation();
+			//get notitfication
+			getNotification();
+			}
+		</script>
+	</body>
+</html>

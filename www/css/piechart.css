@@ -1,0 +1,165 @@
+div#pieChart {
+    text-align: center;
+}
+div#pieChartLocation {
+    text-align: center;
+}
+
+.chart {
+    max-width: 300px;
+    min-width:300px;
+
+    height: 300px;
+    margin: 0px auto;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.pieContainer {
+    width: 300px;
+    height: 350px;
+    margin: auto;
+    text-align: center;
+}
+.pieContainerL {
+    width: 300px;
+    height: 350px;
+    margin: auto;
+    text-align: center;
+}
+.pieTip {
+    position: absolute;
+    /*float: left;*/
+    margin: 0px auto;
+    margin-top: 10px;
+    width:300px;
+    padding: 5px 18px 6px;
+    border-radius: 2px;
+    background: rgba(255,255,255,.97);
+    color: #444;
+    font-size: 10px;
+    text-shadow: 0 1px 0 #fff;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.3;
+    letter-spacing: .06em;
+    box-shadow: 0 0 3px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.5);
+    -webkit-transform: all .3s;
+    -moz-transform: all .3s;
+    -ms-transform: all .3s;
+    -o-transform: all .3s;
+    transform: all .3s;
+    pointer-events: none;
+}
+.pieTipL {
+    position: absolute;
+    /*float: left;*/
+    margin: 0px auto;
+    margin-top: 10px;
+    width:300px;
+    padding: 5px 18px 6px;
+    border-radius: 2px;
+    background: rgba(255,255,255,.97);
+    color: #444;
+    font-size: 10px;
+    text-shadow: 0 1px 0 #fff;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.3;
+    letter-spacing: .06em;
+    box-shadow: 0 0 3px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.5);
+    -webkit-transform: all .3s;
+    -moz-transform: all .3s;
+    -ms-transform: all .3s;
+    -o-transform: all .3s;
+    transform: all .3s;
+    pointer-events: none;
+}
+.pieTip:after {
+    /*     position: absolute;
+         left: 50%;
+         bottom: -6px;
+         content: "";
+         height: 0;
+         !*margin: 0 0 0 -6px;*!
+       margin: 0px auto;
+         border-right: 5px solid transparent;
+         border-left: 5px solid transparent;
+         border-top: 6px solid rgba(255,255,255,.95);
+         line-height: 0;*/
+}
+.chart path { cursor: pointer; }
+
+
+
+
+svg {
+    position: relative;
+}
+
+/* path.lightPie:hover {
+     fill:black;
+ }*/
+
+
+i.glyphicon.glyphicon-chevron-down
+{
+    float: right;
+    top: 27px;
+    right: 0px;
+    color: black;
+    padding: 0px;
+}
+
+
+/**************************************************************/
+.st0{fill:none;stroke:#000000;stroke-miterlimit:10;}
+.st1{fill:none;stroke:#2B6083;stroke-miterlimit:10;}
+.st2{fill:#2B6083;}
+.st3{font-family:'MyriadPro-Regular';}
+.st4{font-size:14.0695px;}
+
+.square {
+    position: relative;
+    width: 100%;
+    /* background-color: #1c7efb;*/
+}
+
+.square:after {
+    content: "";
+    display: block;
+    padding-bottom: 5%;
+}
+
+@media only screen and (max-width: 350px) {
+    div#pieChart {
+        left: -3% !important;
+        position: inherit;
+    }
+}
+@media only screen and (max-width: 350px) {
+    div#review-box {
+        margin-left: -22px;
+    }
+}
+.pieSegmentGroup {
+    cursor: pointer;
+}
+.pieSegmentGroupL {
+    cursor: pointer;
+}
+input#eventColor {
+    font-size: 10px;
+    background-image: none;
+    background-color: rgb(173, 215, 255);
+    color: rgb(0, 0, 0);
+    width: 35px;
+    border-radius: 50px;
+    border: 1px solid #0180a3;
+    border-bottom: 1px solid #0180a3 !important;
+    height: 35px;
+    cursor: pointer;
+}
+.ec-label {
+    margin-top: 10px;
+}

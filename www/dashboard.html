@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags always come first -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<!-- Bootstrap CSS  -->
+		<link href="lib/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+		<link href="lib/css/bootstrap-colorselector.min.css" rel="stylesheet" type="text/css">
+		<!--DatePicker CSS-->
+		<link href="lib/css/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css">
+		<!-- App Style CSS  -->
+		<link href="css/style.css" rel="stylesheet" type="text/css">
+		<!-- App Frame work CSS  -->
+		<link href="css/framework.css" rel="stylesheet" type="text/css">
+		<link href="css/piechart.css" rel="stylesheet" type="text/css">
+		<!-- Font Awesome CSS  -->
+		<link href="lib/css/font-awesome.css" rel="stylesheet" type="text/css">
+		<!-- Animate CSS  -->
+		<link href="lib/css/animate.css" rel="stylesheet" type="text/css">
+		<link href="lib/css/toaster.css" rel="stylesheet" type="text/css">
+<!--		<link href="lib/css/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css">-->
+		<!-- JQuery and Jquery UI js -->
+		<script type="text/javascript" src="lib/js/jquery-2.2.3.min.js"></script>
+		<script type="text/javascript" src="lib/js/jqueryui.js"></script>
+		<script type="text/javascript" src="lib/js/toaster.js"></script>
+		<!--<script type="text/javascript" src="lib/js/jquery.mobile-1.4.5.min.js"></script>-->
+		<!-- App JS  -->
+		<script type="text/javascript" src="scripts/viewmodels/framework-plugins.js"></script>
+		<!-- Plugin for choosing date time Picker  -->
+		<script type="text/javascript" src="lib/js/moment.js"></script>
+		<!-- Plugin for Swiffy   -->
+		<script type="text/javascript" src="https://www.gstatic.com/swiffy/v7.4/runtime.js"></script>
+
+
+		<script>
+			history.pushState(null, null, location.href);
+			window.onpopstate = function(event) {
+			    history.go(1);
+			};
+		</script>
+<style>
+
+span.quote-author {
+    		line-height: 150px !important;
+    		margin-left: 130px !important;
+		}
+.btn-colorselector {
+	margin-top: 14px !important;
+}
+@media (max-width: 767px) and (orientation: landscape)
+{
+	.modal-body {
+		height: 180px;
+		overflow-y: scroll;
+		min-height: 440px !important;
+	}
+}
+
+</style>
+	</head>
+	<body class="dual-sidebar dashboard-page">
+		<div id="loader-wrapper">
+			<div class="spinner">
+				<div class="bounce1"></div>
+				<div class="bounce2"></div>
+				<div class="bounce3"></div>
+			</div>
+		</div>
+		<div id="preloader" style="display: none;">
+			<div id="status" style="display: none;">
+				<div class="preloader-logo"></div>
+				<p class="center-text smaller-text">
+					We're loading the content, give us a second. This won't take long!
+				</p>
+			</div>
+		</div>
+		<!-- Daily Quote Section -->
+		<div class="tutorial" style="display: none;">
+			<p class="quote-title"><strong>”</strong>Quote of the Day<strong>”</strong></p>
+			<p class="quote-content"></p>
+			<p><span>-- </span> <span class="quote-author"></span></p>
+			<a href="#">Got it! Thanks!</a>
+			<div class="tutorial-overlay"></div>
+		</div>
+		<div id="header" class="dashboard header">
+			<div class="header-elements">
+				<h3 class="my-header">My Day Wheel</h3>
+				<a href="#" class="header-icon-1 open-right-sidebar"><i class="fa fa-envelope-o"></i></a>
+				<a href="#" class="header-icon-4 my_popup_open" data-toggle="modal" data-target="#myModal"><i class="fa fa-map-marker"></i></a>
+				<a href="#" class="header-icon-2 open-left-sidebar"><i class="fa fa-navicon"></i></a>
+				<a href="#" class="header-icon-3 header-menu disabled"><i class="fa fa-star"></i></a>
+			</div>
+			<div class="navigation">
+				<a class="navigation-item navigation-item-active" href="">
+				<i class="fa fa-home"></i>
+				<em>Homepage</em>
+				<i class="fa fa-circle"></i>
+				</a>
+				<a class="navigation-item" href="#">
+				<i class="fa fa-cog"></i>
+				<em>Features</em>
+				<i class="fa fa-circle"></i>
+				</a>
+			</div>
+		</div>
+		<div class="all-elements">
+			<div class="snap-drawers">
+				<!--Left Sidebar-->
+				<div class="snap-drawer snap-drawer-left">
+					<div class="sidebar-header-left">
+						<a class="sidebar-logo" href="#"></a>
+					</div>
+					<div class="sidebar-menu">
+						<a class="menu-item menu-item-active" href="dashboard.html">
+							<i class="fa fa-clock-o"></i>
+							<em>MY Day Wheel</em>
+							<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item" href="scheduler.html">
+							<i class="fa fa-calendar"></i>
+							<em>My Schedule</em>
+							<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item" href="week-in-review.html">
+							<i class="fa fa-thumbs-up"></i>
+							<em>My week in review</em>
+							<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item" href="events.html">
+							<i class="fa fa-newspaper-o"></i>
+							<em>Daywheel Events</em>
+							<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item" href="schedule-events.html">
+							<i class="fa fa-newspaper-o"></i>
+							<em>Schedule Events</em>
+							<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item" href="goals.html">
+							<i class="fa fa-bullseye"></i>
+							<em>Goals</em>
+							<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item" href="thoughts.html">
+							<i class="fa fa-comments"></i>
+							<em>Thoughts</em>
+							<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item" href="self-ratings.html">
+							<i class="fa fa-star"></i>
+							<em>Self Ratings</em>
+							<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item" href="vote.html">
+							<i class="fa fa-pie-chart"></i>
+							<em>Vote</em>
+							<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item" href="money.html">
+							<i class="fa fa-money"></i>
+							<em>Money</em>
+							<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item" href="personaldetails.html">
+							<i class="fa fa-user"></i>
+							<em>Personal Details</em>
+							<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item" href="changepassword.html">
+							<i class="fa fa-lock"></i>
+							<em>Change Password</em>
+							<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item" href="about.html">
+							<i class="fa fa-info-circle"></i>
+							<em>About</em>
+							<i class="fa fa-circle"></i>
+						</a>
+						<a id = "logout"class="menu-item" href="javascript:void(0)">
+							<i class="fa fa-power-off"></i>
+							<em>Logout</em>
+							<i class="fa fa-circle"></i>
+						</a>
+					</div>
+				</div>
+				<!--Right Sidebar -->
+				<div class="snap-drawer snap-drawer-right">
+					<div class="sidebar-header-right">
+						<a class="sidebar-logo sidebar-logo-right" href="#"></a>
+					</div>
+					<p class="sidebar-divider">Let's get social</p>
+					<div class="sidebar-menu">
+						<a class="menu-item" href="https://www.facebook.com/DayWheel/">
+							<i class="fa fa-facebook"></i>
+							<em>Facebook</em>
+						</a>
+						<a class="menu-item" href="https://twitter.com/MyDayWheel">
+							<i class="fa fa-twitter"></i>
+							<em>Twitter</em>
+						</a>
+						<a class="menu-item" href="https://www.instagram.com/daywheel/">
+							<i class="fa fa-instagram"></i>
+							<em>Instagram</em>
+						</a>
+					</div>
+					<p class="sidebar-divider">Send an email</p>
+					<div class="container no-bottom">
+						<div class="sidebar-form contact-form no-bottom">
+							<em>
+							Your message is important to us and we reply to all of them in less than 48 hours.
+							</em>
+							<div class="formSuccessMessageWrap" id="formSuccessMessageWrap" style="display: none;">
+								Awesome! We'll get back to you!
+							</div>
+							<form action="/contact.php" method="post" class="contactForm" id="contactForm">
+								<div>
+									<div class="formFieldWrap">
+										<input onfocus="if (this.value=='Name') this.value =''" onblur="if (this.value=='') this.value ='Name'" type="text" name="contactNameField" value="" class="contactField requiredField" id="contactNameField">
+									</div>
+									<div class="formFieldWrap">
+										<input onfocus="if (this.value=='Email') this.value = ''" onblur="if (this.value=='') this.value ='Email'" type="text" name="contactEmailField" value="Email" class="contactField requiredField requiredEmailField" id="contactEmailField">
+									</div>
+									<div class="formFieldWrap">
+										<input onfocus="if (this.value=='Contact Number') this.value = ''" onblur="if (this.value=='') this.value ='Contact Number'" type="text" name="contactNumberField" value="Contact Number" class="contactField requiredField requiredEmailField" id="contactNumberField">
+									</div>
+									<div class="formTextareaWrap">
+										<textarea onfocus="if (this.value=='Message') this.value = ''" onblur="if (this.value=='') this.value ='Message'" name="contactMessageTextarea" class="contactTextarea requiredField" id="contactMessageTextarea">Message</textarea>
+									</div>
+									<div class="formSubmitButtonErrorsWrap">
+										<input type="submit" class="buttonWrap button button-green contactSubmitButton" id="contactSubmitButton" value="SUBMIT" data-formid="contactForm">
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+					<p class="sidebar-divider">Contact Us</p>
+					<div class="sidebar-menu">
+						<a class="menu-item" href="tel:(678) 508-6283">
+							<i class="fa fa-phone"></i>
+							<em>Call Us</em>
+						</a>
+						<a class="menu-item" href="sms:(678) 508-6283">
+							<i class="fa fa-comment-o"></i>
+							<em>Text Us</em>
+						</a>
+						<a class="menu-item" href="mailto:adminsupport@mydaywheel.com">
+							<i class="fa fa-envelope-o"></i>
+							<em>Mail Us</em>
+						</a>
+					</div>
+				</div>
+				<div id="content" class="snap-content">
+					<div class="content" style="padding-left: 20px; padding-right: 20px;">
+						<div class="container-fullscreen heading-style-3 bg-sec-header">
+							<div class="sec-menu row">
+								<div class=" col-md-4 col-xs-4 text-left">
+									<span id="previousDate" class="my-link"></span>
+								</div>
+								<div class=" col-md-4 col-xs-4 text-center">
+									<span id="currentDate" class="my-link"></span>
+								</div>
+								<div class=" col-md-4 col-xs-4 text-right">
+									<span id="mydaywheel" class="my-link">MyDayWheel</span>
+								</div>
+							</div>
+						</div>
+						<div class="">
+							<div class="one-half-responsive">
+								<div id="daywheel-container" class="square">
+									<div class="pieContainer">
+									<div class="chart" id="pieChart"></div>
+									</div>
+								</div>
+							</div>
+							<div class="one-half-responsive last-column page-login">
+								<div class="cover-field">
+									<div class="login-date">
+										<i class="fa fa-calendar-o"></i>
+										<input class="set-today" id="curDate" type="date"/>
+									</div>
+								</div>
+								<div class="cover-field">
+									<label class="" for="EventTitle">Event Title</label>
+									<input type="text" value="" id="eventTitle" placeholder="Event Title">
+								</div>
+<!--								<div class="cover-field">
+									<label class="control-label dt-label ec-label" for="StartsAt">PICK EVENT COLOR</label>
+									<input class="jscolor" value="#0180a3" id="eventColor" style="font-size: 0px; " readonly>
+								</div>-->
+								<div class="cover-field">
+									<label class="control-label dt-label ec-label" for="colorselector_1">PICK EVENT COLOR</label>
+									<select id="colorselector_1">
+										<option value="#A0522D" data-color="#A0522D">sienna</option>
+										<option value="#CD5C5C" data-color="#CD5C5C" selected="selected">indianred</option>
+										<option value="#FF4500" data-color="#FF4500">orangered</option>
+										<option value="#008B8B" data-color="#008B8B">darkcyan</option>
+										<option value="#B8860B" data-color="#B8860B">darkgoldenrod</option>
+										<option value="#32CD32" data-color="#32CD32">limegreen</option>
+										<option value="#FFD700" data-color="#FFD700">gold</option>
+										<option value="#48D1CC" data-color="#48D1CC">mediumturquoise</option>
+										<option value="#87CEEB" data-color="#87CEEB">skyblue</option>
+										<option value="#FF69B4" data-color="#FF69B4">hotpink</option>
+										<option value="#b5ed8e" data-color="#b5ed8e">indianred</option>
+										<option value="#87CEFA" data-color="#87CEFA">lightskyblue</option>
+										<option value="#6495ED" data-color="#6495ED">cornflowerblue</option>
+										<option value="#DC143C" data-color="#DC143C">crimson</option>
+										<option value="#FF8C00" data-color="#FF8C00">darkorange</option>
+										<option value="#C71585" data-color="#C71585">mediumvioletred</option>
+										<option value="#20c0f1" data-color="#20c0f1">EQColor</option>
+										<option value="#1ab77d" data-color="#1ab77d">EQColor</option>
+										<option value="#90b71a" data-color="#90b71a">EQColor</option>
+										<option value="#3d41ca" data-color="#3d41ca">EQColor</option>
+									</select>
+								</div>
+								<div class="cover-field dt-div">
+									<label class="control-label dt-label" for="StartsAt">Starts At</label>
+									<input type="time"  id="StartsAt" name="hrs" placeholder="hrs:mins" value="00:00:00"  pattern="^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$" class="inputs duration t1 time hrs" required>
+								</div>
+								<div class="cover-field dt-div">
+									<label class="control-label dt-label" for="EndsAt">Ends At</label>
+									<input type="time"  id="EndsAt" name="hrs" placeholder="hrs:mins" value="00:00:00" pattern="^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$" class="inputs duration t1 time hrs" required>
+								</div>
+								<a href="javascript:void(0)" id="saveEvent" class="pageapp-login-button button">Save</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<a href="#" class="back-to-top-badge"><i class="fa fa-long-arrow-up"></i></a>
+		</div>
+
+		<div class="modal fade" id="myModal" role="dialog">
+			<div class="modal-dialog">
+
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title" style="color:'#0108a3'">Your Location's:</h4>
+					</div>
+					<div class="modal-body">
+						<div class="sec-menu row">
+							<div class=" col-md-6 col-xs-6 text-left">
+								<span id="previousDateL" class="my-link">2017-06-06</span>
+							</div>
+							<div class=" col-md-6 col-xs-6 text-right">
+								<span id="currentDateL" class="my-link">2017-06-07</span>
+							</div>
+						</div>
+						<div id="daywheel-containerL" class="square">
+							<div class="pieContainerL">
+								<div class="chart" id="pieChartLocation"></div>
+							</div>
+						</div>
+					</div>
+					<!--<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>-->
+				</div>
+
+			</div>
+		</div>
+
+		<div id="footer-fixed" class="not-active"></div>
+		<!-- Custom Js   -->
+		<script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="scripts/viewmodels/geolocation.js"></script>
+		<script type="text/javascript" src="scripts/viewmodels/notification.js"></script>
+		<script type="text/javascript" src="scripts/viewmodels/custom.js"></script>
+		<script type="text/javascript" src="scripts/services/datasource-service.js"></script>
+		<script type="text/javascript" src="scripts/viewmodels/dashboard.js"></script>
+		<script type="text/javascript" src="js/jquery.drawPieChart.js"></script>
+		<script type="text/javascript" src="js/jquery.drawPieChartLocation.js"></script>
+		<script type="text/javascript" src="js/jscolor.min.js"></script>
+		<script type="text/javascript" src="lib/js/bootstrap-colorselector.min.js"></script>
+		<script type="text/javascript" src="lib/js/bootstrap.min.js"></script>
+		<script>
+			document.addEventListener("deviceready", onDeviceReady, false);
+			function onDeviceReady() {
+			//get location
+			    onDeviceLocation();
+			//get notitfication
+				getNotification();
+			}
+
+
+            $(function() {
+                $('#colorselector_1').colorselector();
+            });
+			setInterval(function(){
+			    onDeviceReady();
+			},40000);
+		</script>
+	</body>
+</html>

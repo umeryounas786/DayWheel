@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags always come first -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<!-- Bootstrap CSS  -->
+		<link href="lib/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+		<!--DatePicker CSS-->
+		<link href="lib/css/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css">
+		<!-- App Style CSS  -->
+		<link href="css/style.css" rel="stylesheet" type="text/css">
+		<!-- App Frame work CSS  -->
+		<link href="css/framework.css" rel="stylesheet" type="text/css">
+		<!-- Font Awesome CSS  -->
+		<link href="lib/css/font-awesome.css" rel="stylesheet" type="text/css">
+		<!-- Animate CSS  -->
+		<link href="lib/css/animate.css" rel="stylesheet" type="text/css">
+		<link href="lib/css/toaster.css" rel="stylesheet" type="text/css">
+		<!--Jqx CSS -->
+		<link href="lib/jqx/css/jqx.base.css" rel="stylesheet" type="text/css">
+		<link href="lib/jqx/css/jqx.android1.css" rel="stylesheet" type="text/css">
+		<link href="lib/jqx/css/jqx.mobile.css" rel="stylesheet" type="text/css">
+		<link href="lib/jqx/css/jqx.energyblue.css" rel="stylesheet" type="text/css">
+		<!-- JQuery and Jquery UI js -->
+		<script type="text/javascript" src="lib/js/jquery-2.2.3.min.js"></script>
+		<script type="text/javascript" src="lib/js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="lib/js/jqueryui.js"></script>
+		<script type="text/javascript" src="lib/js/toaster.js"></script>
+		<!--Jqx js-->
+		<script type="text/javascript" src="lib/jqx/js/simulator.js"></script>
+		<script type="text/javascript" src="lib/jqx/js/jqxcore.js"></script>
+		<script type="text/javascript" src="lib/jqx/js/jqxbuttons.js"></script>
+		<script type="text/javascript" src="lib/jqx/js/jqxscrollbar.js"></script>
+		<script type="text/javascript" src="lib/jqx/js/jqxdata.js"></script>
+		<script type="text/javascript" src="lib/jqx/js/jqxdate.js"></script>
+		<script type="text/javascript" src="lib/jqx/js/jqxscheduler.js"></script>
+		<script type="text/javascript" src="lib/jqx/js/jqxscheduler.api.js"></script>
+		<script type="text/javascript" src="lib/jqx/js/jqxdatetimeinput.js"></script>
+		<script type="text/javascript" src="lib/jqx/js/jqxmenu.js"></script>
+		<script type="text/javascript" src="lib/jqx/js/jqxcalendar.js"></script>
+		<script type="text/javascript" src="lib/jqx/js/jqxtooltip.js"></script>
+		<script type="text/javascript" src="lib/jqx/js/jqxwindow.js"></script>
+		<script type="text/javascript" src="lib/jqx/js/jqxcheckbox.js"></script>
+		<script type="text/javascript" src="lib/jqx/js/jqxlistbox.js"></script>
+		<script type="text/javascript" src="lib/jqx/js/jqxdropdownlist.js"></script>
+		<script type="text/javascript" src="lib/jqx/js/jqxnumberinput.js"></script>
+		<script type="text/javascript" src="lib/jqx/js/jqxradiobutton.js"></script>
+		<script type="text/javascript" src="lib/jqx/js/jqxinput.js"></script>
+		<script type="text/javascript" src="lib/jqx/js/globalize.js"></script>
+		<style>
+			body, html {
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			padding: 3px;
+			box-sizing: border-box;
+			margin: 0;
+			}
+			.jqx-grid-column-header,
+			.jqx-scheduler-appointment{
+			z-index: 0 !important;
+			}
+			@media screen and (max-width: 500px) and (min-width: 320px ){
+			div#toolbarscheduler > div > div:last-child {
+			display: block !important;
+			}
+			.jqx-group-button-normal-mobile {
+			font-size: 11px;
+			}
+			}
+			@media screen and (max-width: 319px) and (min-width: 240px ){
+			div#toolbarscheduler > div > div:last-child {
+			display: block !important;
+			}
+			.jqx-group-button-normal-mobile {
+			font-size: 11px;
+			}
+			}
+		</style>
+	</head>
+	<body class="dual-sidebar dashboard-page">
+		<div id="preloader" style="display: none;">
+			<div id="status" style="display: none;">
+				<div class="preloader-logo"></div>
+				<p class="center-text smaller-text">
+					We're loading the content, give us a second. This won't take long!
+				</p>
+			</div>
+		</div>
+		<div id="header" class="dashboard header">
+			<div class="header-elements">
+				<!-- <a href="#" class="header-logo"></a>-->
+				<h3 class="my-header">Scheduler</h3>
+				<a href="#" class="header-icon-1 open-right-sidebar"><i class="fa fa-envelope-o"></i></a>
+				<a href="#" class="header-icon-2 open-left-sidebar"><i class="fa fa-navicon"></i></a>
+				<a href="#" class="header-icon-3 header-menu disabled"><i class="fa fa-star"></i></a>
+			</div>
+		</div>
+		<div class="all-elements">
+			<div class="snap-drawers">
+				<!--Left Sidebar-->
+				<div class="snap-drawer snap-drawer-left">
+					<div class="sidebar-header-left">
+						<a class="sidebar-logo" href="#"></a>
+					</div>
+					<div class="sidebar-menu">
+						<a class="menu-item" href="dashboard.html">
+						<i class="fa fa-clock-o"></i>
+						<em>MY Day Wheel</em>
+						<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item menu-item-active" href="scheduler.html">
+						<i class="fa fa-calendar"></i>
+						<em>My Schedule</em>
+						<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item" href="week-in-review.html">
+						<i class="fa fa-thumbs-up"></i>
+						<em>My week in review</em>
+						<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item" href="events.html">
+						<i class="fa fa-newspaper-o"></i>
+						<em>Daywheel Events</em>
+						<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item" href="schedule-events.html">
+						<i class="fa fa-newspaper-o"></i>
+						<em>Schedule Events</em>
+						<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item" href="goals.html">
+						<i class="fa fa-bullseye"></i>
+						<em>Goals</em>
+						<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item" href="thoughts.html">
+						<i class="fa fa-comments"></i>
+						<em>Thoughts</em>
+						<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item" href="self-ratings.html">
+						<i class="fa fa-star"></i>
+						<em>Self Ratings</em>
+						<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item" href="vote.html">
+						<i class="fa fa-pie-chart"></i>
+						<em>Vote</em>
+						<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item" href="money.html">
+						<i class="fa fa-money"></i>
+						<em>Money</em>
+						<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item" href="personaldetails.html">
+						<i class="fa fa-user"></i>
+						<em>Personal Details</em>
+						<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item" href="changepassword.html">
+						<i class="fa fa-lock"></i>
+						<em>Change Password</em>
+						<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item" href="about.html">
+						<i class="fa fa-info-circle"></i>
+						<em>About</em>
+						<i class="fa fa-circle"></i>
+						</a>
+						<a id = "logout"class="menu-item" href="javascript:void(0)">
+						<i class="fa fa-power-off"></i>
+						<em>Logout</em>
+						<i class="fa fa-circle"></i>
+						</a>
+					</div>
+				</div>
+				<!--Right Sidebar -->
+				<div class="snap-drawer snap-drawer-right">
+					<div class="sidebar-header-right">
+						<a class="sidebar-logo sidebar-logo-right" href="#"></a>
+					</div>
+					<p class="sidebar-divider">Let's get social</p>
+					<div class="sidebar-menu">
+						<a class="menu-item" href="https://www.facebook.com/DayWheel/">
+						<i class="fa fa-facebook"></i>
+						<em>Facebook</em>
+						</a>
+						<a class="menu-item" href="https://twitter.com/MyDayWheel">
+						<i class="fa fa-twitter"></i>
+						<em>Twitter</em>
+						</a>
+						<a class="menu-item" href="https://www.instagram.com/daywheel/">
+						<i class="fa fa-instagram"></i>
+						<em>Instagram</em>
+						</a>
+					</div>
+					<p class="sidebar-divider">Send an email</p>
+					<div class="container no-bottom">
+						<div class="sidebar-form contact-form no-bottom">
+							<em>
+							Your message is important to us and we reply to all of them in less than 48 hours.
+							</em>
+							<div class="formSuccessMessageWrap" id="formSuccessMessageWrap" style="display: none;">
+								Awesome! We'll get back to you!
+							</div>
+							<form action="/contact.php" method="post" class="contactForm" id="contactForm">
+								<div>
+									<div class="formValidationError" id="contactNameFieldError" style="display: none;">Name is required!</div>
+									<div class="formValidationError" id="contactEmailFieldError" style="display: none;">Mail address required!</div>
+									<div class="formValidationError" id="contactEmailFieldError2" style="display: none;">Mail address must be valid!</div>
+									<div class="formValidationError" id="contactMessageTextareaError" style="display: none;">Message field is empty!</div>
+									<div class="formFieldWrap">
+										<input onfocus="if (this.value=='Name') this.value =''" onblur="if (this.value=='') this.value ='Name'" type="text" name="contactNameField" value="Name" class="contactField requiredField" id="contactNameField">
+									</div>
+									<div class="formFieldWrap">
+										<input onfocus="if (this.value=='Email') this.value = ''" onblur="if (this.value=='') this.value =''" type="text" name="contactEmailField" value="Email" class="contactField requiredField requiredEmailField" id="contactEmailField">
+									</div>
+									<div class="formTextareaWrap">
+										<textarea onfocus="if (this.value=='Message') this.value = ''" onblur="if (this.value=='') this.value ='Message'" name="contactMessageTextarea" class="contactTextarea requiredField" id="contactMessageTextarea">Message</textarea>
+									</div>
+									<div class="formSubmitButtonErrorsWrap">
+										<input type="submit" class="buttonWrap button button-green contactSubmitButton" id="contactSubmitButton" value="SUBMIT" data-formid="contactForm">
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+					<p class="sidebar-divider">Contact Us</p>
+					<div class="sidebar-menu">
+						<a class="menu-item" href="tel:(678) 508-6283">
+						<i class="fa fa-phone"></i>
+						<em>Call Us</em>
+						</a>
+						<a class="menu-item" href="sms:(678) 508-6283">
+						<i class="fa fa-comment-o"></i>
+						<em>Text Us</em>
+						</a>
+						<a class="menu-item" href="mailto:adminsupport@mydaywheel.com">
+						<i class="fa fa-envelope-o"></i>
+						<em>Mail Us</em>
+						</a>
+					</div>
+				</div>
+				<div id="content" class="snap-content">
+					<div class="content" style="padding-left: 20px; padding-right: 20px;">
+						<div id="demoContainer" class="device-mobile-tablet">
+							<div id="container" class="device-mobile-tablet-container">
+								<div style="border:none;" id="scheduler"></div>
+								<!--Bootstrap Modal Dialog Starts-->
+								<div class="modal" id="alertModal" tabindex="-1" role="dialog" area-hidden="true">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h4 class="modal-title text-center" id="label">No Schedule Data</h4>
+											</div>
+											<div class="modal-body">
+												<div class="heading-style-3 bg-4">
+													<h4 class="heading-title">No Schedule Available</h4>
+													<div class="overlay bg-black"></div>
+												</div>
+											</div>
+											<div class="modal-footer">
+												<a class="btn btn-orange" data-dismiss="modal" id="ok">OK</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<a href="#" class="back-to-top-badge"><i class="fa fa-long-arrow-up"></i></a>
+		</div>
+		<div id="footer-fixed" class="not-active"></div>
+		<!-- App JS  -->
+		<script type="text/javascript" src="scripts/viewmodels/framework-plugins.js"></script>
+		<!-- Plugin for choosing date time Picker  -->
+		<script type="text/javascript" src="lib/js/moment.js"></script>
+		<!-- Custom Js   -->
+		<script type="text/javascript" src="scripts/viewmodels/custom.js"></script>
+		<script type="text/javascript" src="scripts/services/datasource-service.js"></script>
+		<script type="text/javascript" src="scripts/viewmodels/scheduler.js"></script>
+		<script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="scripts/viewmodels/geolocation.js"></script>
+		<script type="text/javascript" src="scripts/viewmodels/notification.js"></script>
+		<script>
+			document.addEventListener("deviceready", onDeviceReady, false);
+			function onDeviceReady()
+			{
+			//get location
+			     onDeviceLocation();
+			//get notitfication
+			getNotification();
+			}
+		</script>
+		<script type="text/javascript">
+			$(document).ready(function () {
+
+			});
+		</script>
+	</body>
+</html>

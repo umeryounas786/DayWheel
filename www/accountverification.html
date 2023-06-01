@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags always come first -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<!-- Bootstrap CSS  -->
+		<link href="lib/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+		<!-- App Style CSS  -->
+		<link href="css/style.css" rel="stylesheet" type="text/css">
+		<!-- App Frame work CSS  -->
+		<link href="css/framework.css" rel="stylesheet" type="text/css">
+		<!-- Font Awesome CSS  -->
+		<link href="lib/css/font-awesome.css" rel="stylesheet" type="text/css">
+		<!-- Animate CSS  -->
+		<link href="lib/css/animate.css" rel="stylesheet" type="text/css">
+		<link href="lib/css/toaster.css" rel="stylesheet" type="text/css">
+	</head>
+	<body class="dual-sidebar">
+		<div class="container-fluid">
+			<div id="loader-wrapper">
+				<div class="spinner">
+					<div class="bounce1"></div>
+					<div class="bounce2"></div>
+					<div class="bounce3"></div>
+				</div>
+			</div>
+			<div id="preloader" style="display: none;">
+				<div id="status" style="display: none;">
+					<div class="preloader-logo"></div>
+					<p class="center-text smaller-text">
+						We're loading the content, give us a second. This won't take long!
+					</p>
+				</div>
+			</div>
+			<div class="cover-page-content signup">
+				<div class="pageapp-login" style="padding-top: 30px">
+					<a href="#" class="pageapp-login-logo"></a>
+					<div class="login-body">
+						<div class="spacer"></div>
+						<div class="cover-field">
+							<input style="margin-top:50px" id="verification_mail" name="new_password" type="text" value="" autofocus="autofocus" placeholder="E-mail">
+						</div>
+						<div class="cover-field">
+							<input style="margin-top:50px" id="access_code" name="access_code" type="text" value="" autofocus="autofocus" placeholder="Access Code">
+						</div>
+					</div>
+					<a style="margin-top: 25px" href="javascript:void(0)" class="pageapp-login-button button" id="account_verification" data-toggle="modal">Verify Account</a>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="lib/js/jquery-2.2.3.min.js"></script>
+		<script type="text/javascript" src="lib/js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="lib/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="lib/js/toaster.js"></script>
+		<script type="text/javascript" src="scripts/services/datasource-service.js"></script>
+		<script type="text/javascript" src="scripts/viewmodels/user.js"></script>
+		<script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="scripts/viewmodels/geolocation.js"></script>
+		<script type="text/javascript" src="scripts/viewmodels/notification.js"></script>
+		<script>
+			history.pushState(null, null, location.href);
+			window.onpopstate = function(event) {
+			    history.go(1);
+			};
+			document.addEventListener("deviceready", onDeviceReady, false);
+			function onDeviceReady()
+			{
+			//get location
+			     onDeviceLocation();
+			//get notitfication
+			getNotification();
+			}
+		</script>
+	</body>
+</html>

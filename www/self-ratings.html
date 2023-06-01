@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags always come first -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<!-- Bootstrap CSS  -->
+		<link href="lib/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+		<!-- App Style CSS  -->
+		<link href="css/style.css" rel="stylesheet" type="text/css">
+		<!-- App Frame work CSS  -->
+		<link href="css/framework.css" rel="stylesheet" type="text/css">
+		<!-- Font Awesome CSS  -->
+		<link href="lib/css/font-awesome.css" rel="stylesheet" type="text/css">
+		<!-- Animate CSS  -->
+		<link href="lib/css/animate.css" rel="stylesheet" type="text/css">
+		<link href="lib/css/toaster.css" rel="stylesheet" type="text/css">
+		<!-- JQuery and Jquery UI js -->
+		<script type="text/javascript" src="lib/js/jquery-2.2.3.min.js"></script>
+		<script type="text/javascript" src="lib/js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="lib/js/jqueryui.js"></script>
+		<script type="text/javascript" src="lib/js/toaster.js"></script>
+		<script type="text/javascript" src="lib/js/moment.js"></script>
+		<script type="text/javascript" src="lib/js/jquery.bootpag.min.js"></script>
+	</head>
+	<body class="dual-sidebar events-page">
+		<div id="loader-wrapper">
+			<div class="spinner">
+				<div class="bounce1"></div>
+				<div class="bounce2"></div>
+				<div class="bounce3"></div>
+			</div>
+		</div>
+		<div id="preloader" style="display: none;">
+			<div id="status" style="display: none;">
+				<div class="preloader-logo"></div>
+				<p class="center-text smaller-text">
+					We're loading the content, give us a second. This won't take long!
+				</p>
+			</div>
+		</div>
+		<div id="header" class="dashboard header">
+			<div class="header-elements">
+				<!-- <a href="#" class="header-logo"></a>-->
+				<h3 class="my-header">Self Ratings</h3>
+				<a href="#" class="header-icon-1 open-right-sidebar1"><i class="fa fa-search"></i></a>
+				<a href="#" class="header-icon-2 open-left-sidebar"><i class="fa fa-navicon"></i></a>
+				<a href="#" class="header-icon-3 header-menu disabled"><i class="fa fa-star"></i></a>
+				<div class="search-section">
+					<div class="input-group">
+						<input id="my-rating-search" type="text" class="form-control" placeholder="Type and Hit Enter">
+						<span class="input-group-btn">
+						<button id="rating-search" class="btn btn-warning" type="reset"><span class="glyphicon glyphicon-search"></span></button>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="all-elements">
+			<div class="snap-drawers">
+				<!--Left Sidebar-->
+				<div class="snap-drawer snap-drawer-left">
+					<div class="sidebar-header-left">
+						<a class="sidebar-logo" href="#"></a>
+					</div>
+					<div class="sidebar-menu">
+						<a class="menu-item" href="dashboard.html">
+						<i class="fa fa-clock-o"></i>
+						<em>MY Day Wheel</em>
+						<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item" href="scheduler.html">
+						<i class="fa fa-calendar"></i>
+						<em>My Schedule</em>
+						<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item" href="week-in-review.html">
+						<i class="fa fa-thumbs-up"></i>
+						<em>My week in review</em>
+						<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item" href="events.html">
+						<i class="fa fa-newspaper-o"></i>
+						<em>Daywheel Events</em>
+						<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item" href="schedule-events.html">
+						<i class="fa fa-newspaper-o"></i>
+						<em>Schedule Events</em>
+						<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item" href="goals.html">
+						<i class="fa fa-bullseye"></i>
+						<em>Goals</em>
+						<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item" href="thoughts.html">
+						<i class="fa fa-comments"></i>
+						<em>Thoughts</em>
+						<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item menu-item-active" href="self-ratings.html">
+						<i class="fa fa-star"></i>
+						<em>Self Ratings</em>
+						<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item" href="vote.html">
+						<i class="fa fa-pie-chart"></i>
+						<em>Vote</em>
+						<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item" href="money.html">
+						<i class="fa fa-money"></i>
+						<em>Money</em>
+						<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item" href="personaldetails.html">
+						<i class="fa fa-user"></i>
+						<em>Personal Details</em>
+						<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item" href="changepassword.html">
+						<i class="fa fa-lock"></i>
+						<em>Change Password</em>
+						<i class="fa fa-circle"></i>
+						</a>
+						<a class="menu-item" href="about.html">
+						<i class="fa fa-info-circle"></i>
+						<em>About</em>
+						<i class="fa fa-circle"></i>
+						</a>
+						<a id = "logout"class="menu-item" href="javascript:void(0)">
+						<i class="fa fa-power-off"></i>
+						<em>Logout</em>
+						<i class="fa fa-circle"></i>
+						</a>
+					</div>
+				</div>
+				<!--Right Sidebar -->
+				<div class="snap-drawer snap-drawer-right">
+					<div class="sidebar-header-right">
+						<a class="sidebar-logo sidebar-logo-right" href="#"></a>
+					</div>
+					<div class="blog-sidebar-search full-bottom">
+						<i class="fa fa-search"></i>
+						<input type="text" value="Search">
+					</div>
+					<p class="sidebar-divider">Let's get social</p>
+					<div class="sidebar-menu">
+						<a class="menu-item" href="https://www.facebook.com/DayWheel/">
+						<i class="fa fa-facebook"></i>
+						<em>Facebook</em>
+						</a>
+						<a class="menu-item" href="https://twitter.com/MyDayWheel">
+						<i class="fa fa-twitter"></i>
+						<em>Twitter</em>
+						</a>
+						<a class="menu-item" href="https://www.instagram.com/daywheel/">
+						<i class="fa fa-instagram"></i>
+						<em>Instagram</em>
+						</a>
+					</div>
+					<p class="sidebar-divider">Send an email</p>
+					<div class="container no-bottom">
+						<div class="sidebar-form contact-form no-bottom">
+							<em>
+							Your message is important to us and we reply to all of them in less than 48 hours.
+							</em>
+							<div class="formSuccessMessageWrap" id="formSuccessMessageWrap" style="display: none;">
+								Awesome! We'll get back to you!
+							</div>
+							<form action="/contact.php" method="post" class="contactForm" id="contactForm">
+								<div>
+									<div class="formValidationError" id="contactNameFieldError" style="display: none;">Name is required!</div>
+									<div class="formValidationError" id="contactEmailFieldError" style="display: none;">Mail address required!</div>
+									<div class="formValidationError" id="contactEmailFieldError2" style="display: none;">Mail address must be valid!</div>
+									<div class="formValidationError" id="contactMessageTextareaError" style="display: none;">Message field is empty!</div>
+									<div class="formFieldWrap">
+										<input onfocus="if (this.value=='Name') this.value =''" onblur="if (this.value=='') this.value ='Name'" type="text" name="contactNameField" value="Name" class="contactField requiredField" id="contactNameField">
+									</div>
+									<div class="formFieldWrap">
+										<input onfocus="if (this.value=='Email') this.value = ''" onblur="if (this.value=='') this.value =''" type="text" name="contactEmailField" value="Email" class="contactField requiredField requiredEmailField" id="contactEmailField">
+									</div>
+									<div class="formTextareaWrap">
+										<textarea onfocus="if (this.value=='Message') this.value = ''" onblur="if (this.value=='') this.value ='Message'" name="contactMessageTextarea" class="contactTextarea requiredField" id="contactMessageTextarea">Message</textarea>
+									</div>
+									<div class="formSubmitButtonErrorsWrap">
+										<input type="submit" class="buttonWrap button button-green contactSubmitButton" id="contactSubmitButton" value="SUBMIT" data-formid="contactForm">
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+					<p class="sidebar-divider">Contact Us</p>
+					<div class="sidebar-menu">
+						<a class="menu-item" href="tel:(678) 508-6283">
+						<i class="fa fa-phone"></i>
+						<em>Call Us</em>
+						</a>
+						<a class="menu-item" href="sms:(678) 508-6283">
+						<i class="fa fa-comment-o"></i>
+						<em>Text Us</em>
+						</a>
+						<a class="menu-item" href="mailto:adminsupport@mydaywheel.com">
+						<i class="fa fa-envelope-o"></i>
+						<em>Mail Us</em>
+						</a>
+					</div>
+				</div>
+				<div id="content" class="snap-content">
+					<div class="content" style="padding-left: 20px; padding-right: 20px;">
+						<div class="cover-page-content">
+							<div class="goalss-page">
+								<div class="events-list-section">
+									<div class="container-fullscreen heading-style-3 bg-sec-header">
+										<div class="sec-menu row">
+											<div class=" col-md-6 col-xs-6 text-left">
+												<span class="my-link">Daily Ratings</span>
+											</div>
+											<div class=" col-md-6 col-xs-6 text-right">
+												<a href="#" class="event-list-icon-plus bg-theme-blue scale-hover create-modal"><i class="fa fa-plus"></i></a>
+											</div>
+										</div>
+									</div>
+									<div class="cover-field page-login">
+										<div class="login-date">
+											<i class="fa fa-calendar-o"></i>
+											<input class="set-today" id="curDate" style="width:auto;" type="date"/>
+										</div>
+									</div>
+									<div class="filter-section">
+										<div class="row">
+											<div class=" col-md-6 col-xs-6 text-left">
+												<div class="form-inline">
+													<div class="form-group">
+														<label class="control-label my-label" for="FilterWheelEvent">Filter</label>
+														<select id="FilterWheelEvent" class="form-control my-form-control">
+															<!--<option value="">Select</option>-->
+															<option value="1">Today</option>
+															<option value="2">Last 20</option>
+															<option value="-1">View All</option>
+														</select>
+													</div>
+												</div>
+											</div>
+											<div class=" col-md-6 col-xs-6 text-right">
+												<a href="javascript:void(0)" id="FilterSubmit" class="button filter-button" style="display: none"><i class="fa fa-filter"></i></a>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-12">
+												<p>Total Results Found for <span class="filter-selected-value" id = "displaySelect"></span><span>:</span> <span class="showing-result-count" id="totCount"></span></p>
+											</div>
+										</div>
+									</div>
+									<div id="EventListPagination" class="jplist">
+										<div class="event-list-box list" id = "ratingList"></div>
+										<div class="event-list-box list" id = "ratingFilterList"></div>
+										<div style="text-align: center;color: red;display: none" id="noData">No Record to Display.</div>
+										<!-- panel -->
+										<div class="demo4_bottom"></div>
+										<div class="search_bottom"></div>
+									</div>
+								</div>
+								<div class="simple-modal-content create-modal-content">
+									<div class="modal-content" style="min-height:500px ">
+										<div class="modal-header" style="margin-left: 15px">
+											<h5>Self Rating</h5>
+											<a href="#" class="modal-close" style="margin-right: 15px"><i class="fa fa-times"></i></a>
+										</div>
+										<div class="modal-body my-modal-body" style="min-height:300px ">
+											<div class="cover-field">
+												<label class="control-label dt-label" for="ratingDate">Rating Date</label>
+												<input class="set-today" id="ratingDate" type="date"/>
+											</div>
+											<div class="cover-field">
+												<label class="control-label dt-label" for="ratingDescription">Rating Description</label>
+												<input type="text" value="" id="ratingDescription" placeholder="Rating Description">
+											</div>
+											<div class="smiley">
+												<div class="one-third-responsive rating-radio">
+													<input id="radio-label-1" class="radiobox" name="myrate" value="Excellent" type="radio">
+													<label class="radio-label" for="radio-label-1">Excellent</label>
+												</div>
+												<div class="one-third-responsive rating-radio">
+													<input id="radio-label-2" class="radiobox" value = "Good" name="myrate" type="radio">
+													<label class="radio-label" for="radio-label-2">Good</label>
+												</div>
+												<div class="one-third-responsive rating-radio">
+													<input id="radio-label-3" class="radiobox" value="Ok" name="myrate" type="radio">
+													<label class="radio-label" for="radio-label-3">Ok</label>
+												</div>
+												<div class="one-third-responsive rating-radio">
+													<input id="radio-label-4" class="radiobox" value="Bad" name="myrate" type="radio">
+													<label class="radio-label" for="radio-label-4">Bad</label>
+												</div>
+												<div class="one-third-responsive rating-radio">
+													<input id="radio-label-5" class="radiobox" value="Terrrible" name="myrate" type="radio">
+													<label class="radio-label" for="radio-label-5">Terrrible</label>
+												</div>
+												<div class="one-third-responsive rating-radio">
+													<input id="radio-label-6" class="radiobox" value="Unsure" name="myrate" type="radio">
+													<label class="radio-label" for="radio-label-6">Unsure</label>
+												</div>
+											</div>
+											<strong style="font-size: 16px;">Smiley</strong>
+											<div class="smiley-box">
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="sm1" name="smilerad" value="0000">
+													<label for="sm1"><img src="images/smiley/act-up.png" title="act-up" alt="act-up"></label>
+												</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="sm2" name="smilerad" value="0001">
+													<label for="sm2"><img src="images/smiley/angel.png" title="angel" alt="angel"></label>
+												</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="sm3" name="smilerad" value="0002">
+													<label for="sm3"><img src="images/smiley/angry.png" title="angry" alt="angry"></label>
+												</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="sm4" name="smilerad" value="0003">
+													<label for="sm4"><img src="images/smiley/arrogant.png" title="arrogant" alt="arrogant"></label>
+												</div>
+												<div style="clear:both; height:0px;">&nbsp;</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="sm5" name="smilerad" value="0004">
+													<label for="sm5"><img src="images/smiley/bad.png" title="bad" alt="bad"></label>
+												</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="sm6" name="smilerad" value="0005">
+													<label for="sm6"><img src="images/smiley/neutral.png" title="neutral" alt="neutral"></label>
+												</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="sm7" name="smilerad" value="0006">
+													<label for="sm7"><img src="images/smiley/beauty.png" title="beauty" alt="beauty"></label>
+												</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="sm8" name="smilerad" value="0007">
+													<label for="sm8"><img src="images/smiley/beer.png" title="beer" alt="beer"></label>
+												</div>
+												<div style="clear:both; height:0px;">&nbsp;</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="sm9" name="smilerad" value="0008">
+													<label for="sm9"><img src="images/smiley/cake.png" title="cake" alt="cake"></label>
+												</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="sm10" name="smilerad" value="0009">
+													<label for="sm10"><img src="images/smiley/chicken.png" title="chicken" alt="chicken"></label>
+												</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="sm11" name="smilerad" value="0010">
+													<label for="sm11"><img src="images/smiley/coffee.png" title="coffee" alt="coffee"></label>
+												</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="sm12" name="smilerad" value="0011">
+													<label for="sm12"><img src="images/smiley/tv.png" title="tv" alt="tv"></label>
+												</div>
+												<div style="clear:both; height:0px;">&nbsp;</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="sm13" name="smilerad" value="0012">
+													<label for="sm13"><img src="images/smiley/cloudy.png" title="cloudy" alt="cloudy"></label>
+												</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="sm14" name="smilerad" value="0013">
+													<label for="sm14"><img src="images/smiley/confused.png" title="confused" alt="confused"></label>
+												</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="sm15" name="smilerad" value="0014">
+													<label for="sm15"><img src="images/smiley/desire.png" title="desire" alt="desire"></label>
+												</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="sm16" name="smilerad" value="0015">
+													<label for="sm16"><img src="images/smiley/dazed.png" title="dazed" alt="dazed"></label>
+												</div>
+												<div style="clear:both; height:0px;">&nbsp;</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="sm17" name="smilerad" value="0016">
+													<label for="sm17"><img src="images/smiley/dance.png" title="dance" alt="dance"></label>
+												</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="sm18" name="smilerad" value="0017">
+													<label for="sm18"><img src="images/smiley/drink.png" title="drink" alt="drink"></label>
+												</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="sm19" name="smilerad" value="0018">
+													<label for="sm19"><img src="images/smiley/cowboy.png" title="cowboy" alt="cowboy"></label>
+												</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="sm20" name="smilerad" value="0019">
+													<label for="sm20"><img src="images/smiley/devil.png" title="devil" alt="devil"></label>
+												</div>
+												<div style="clear:both; height:0px;">&nbsp;</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="sm21" name="smilerad" value="0020">
+													<label for="sm21"><img src="images/smiley/disapointed.png" title="disapointed" alt="disapointed"></label>
+												</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="sm22" name="smilerad" value="0021">
+													<label for="sm22"><img src="images/smiley/love.png" title="love" alt="love"></label>
+												</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="sm23" name="smilerad" value="0022">
+													<label for="sm23"><img src="images/smiley/love-over.png" title="love-over" alt="love-over"></label>
+												</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="sm24" name="smilerad" value="0023">
+													<label for="sm24"><img src="images/smiley/party.png" title="party" alt="party"></label>
+												</div>
+												<div style="clear:both; height:0px;">&nbsp;</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="sm25" name="smilerad" value="0024">
+													<label for="sm25"><img src="images/smiley/thinking.png" title="thinking" alt="thinking"></label>
+												</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="sm26" name="smilerad" value="0025">
+													<label for="sm26"><img src="images/smiley/shock.png" title="shock" alt="shock"></label>
+												</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="sm27" name="smilerad" value="0026">
+													<label for="sm27"><img src="images/smiley/yin-yang.png" title="yin-yang" alt="yin-yang"></label>
+												</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="sm28" name="smilerad" value="0027">
+													<label for="sm28"><img src="images/smiley/yawn.png" title="yawn" alt="yawn"></label>
+												</div>
+											</div>
+											<a href="javascript:void(0)" id="saveRating" class="pageapp-login-button button">Save</a>
+										</div>
+									</div>
+								</div>
+								<div class="simple-modal-content edit-modal-content">
+									<div class="modal-content" style="min-height:500px ">
+										<div class="modal-header" style="margin-left: 15px">
+											<h5>Edit Rating</h5>
+											<a href="#" class="modal-close" style="margin-right: 15px"><i class="fa fa-times"></i></a>
+										</div>
+										<div class="modal-body my-modal-body" style="min-height:300px ">
+											<div class="cover-field">
+												<label class="control-label dt-label" for="ratingEditDate">Rating Date</label>
+												<input class="set-today" id="ratingEditDate" type="date"/>
+											</div>
+											<div class="cover-field">
+												<label class="control-label dt-label" for="ratingEditDescription">Rating Description</label>
+												<input type="text" value="" id="ratingEditDescription" placeholder="Rating Description">
+											</div>
+											<input type="hidden" value="" id="editIndex">
+											<div class="smiley">
+												<div class="one-third-responsive rating-radio">
+													<input id="edit-radio-label-1" class="radiobox" name="myrate" value="Excellent" type="radio">
+													<label class="radio-label" for="radio-label-1">Excellent</label>
+												</div>
+												<div class="one-third-responsive rating-radio">
+													<input id="edit-radio-label-2" class="radiobox" name="myrate" value="Good" type="radio">
+													<label class="radio-label" for="radio-label-2">Good</label>
+												</div>
+												<div class="one-third-responsive rating-radio">
+													<input id="edit-radio-label-3" class="radiobox" name="myrate" value="Ok" type="radio">
+													<label class="radio-label" for="radio-label-3">Ok</label>
+												</div>
+												<div class="one-third-responsive rating-radio">
+													<input id="edit-radio-label-4" class="radiobox" name="myrate" value="Bad" type="radio">
+													<label class="radio-label" for="radio-label-4">Bad</label>
+												</div>
+												<div class="one-third-responsive rating-radio">
+													<input id="edit-radio-label-5" class="radiobox" name="myrate" value="Terrrible" type="radio">
+													<label class="radio-label" for="radio-label-5">Terrrible</label>
+												</div>
+												<div class="one-third-responsive rating-radio">
+													<input id="edit-radio-label-6" class="radiobox" name="myrate" value="Unsure" type="radio">
+													<label class="radio-label" for="radio-label-6">Unsure</label>
+												</div>
+											</div>
+											<strong style="font-size: 16px;">Smiley</strong>
+											<div class="smiley-box">
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="esm1" name="smilerad" value="0000">
+													<label for="esm1"><img src="images/smiley/act-up.png" title="act-up" alt="act-up"></label>
+												</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="esm2" name="smilerad" value="0001">
+													<label for="esm2"><img src="images/smiley/angel.png" title="angel" alt="angel"></label>
+												</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="esm3" name="smilerad" value="0002">
+													<label for="esm3"><img src="images/smiley/angry.png" title="angry" alt="angry"></label>
+												</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="esm4" name="smilerad" value="0003">
+													<label for="esm4"><img src="images/smiley/arrogant.png" title="arrogant" alt="arrogant"></label>
+												</div>
+												<div style="clear:both; height:0px;">&nbsp;</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="esm5" name="smilerad" value="0004">
+													<label for="esm5"><img src="images/smiley/bad.png" title="bad" alt="bad"></label>
+												</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="esm6" name="smilerad" value="0005">
+													<label for="esm6"><img src="images/smiley/neutral.png" title="neutral" alt="neutral"></label>
+												</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="esm7" name="smilerad" value="0006">
+													<label for="esm7"><img src="images/smiley/beauty.png" title="beauty" alt="beauty"></label>
+												</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="esm8" name="smilerad" value="0007">
+													<label for="esm8"><img src="images/smiley/beer.png" title="beer" alt="beer"></label>
+												</div>
+												<div style="clear:both; height:0px;">&nbsp;</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="esm9" name="smilerad" value="0008">
+													<label for="esm9"><img src="images/smiley/cake.png" title="cake" alt="cake"></label>
+												</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="esm10" name="smilerad" value="0009">
+													<label for="esm10"><img src="images/smiley/chicken.png" title="chicken" alt="chicken"></label>
+												</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="esm11" name="smilerad" value="0010">
+													<label for="esm11"><img src="images/smiley/coffee.png" title="coffee" alt="coffee"></label>
+												</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="esm12" name="smilerad" value="0011">
+													<label for="esm12"><img src="images/smiley/tv.png" title="tv" alt="tv"></label>
+												</div>
+												<div style="clear:both; height:0px;">&nbsp;</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="esm13" name="smilerad" value="0012">
+													<label for="esm13"><img src="images/smiley/cloudy.png" title="cloudy" alt="cloudy"></label>
+												</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="esm14" name="smilerad" value="0013">
+													<label for="esm14"><img src="images/smiley/confused.png" title="confused" alt="confused"></label>
+												</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="esm15" name="smilerad" value="0014">
+													<label for="esm15"><img src="images/smiley/desire.png" title="desire" alt="desire"></label>
+												</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="esm16" name="smilerad" value="0015">
+													<label for="esm16"><img src="images/smiley/dazed.png" title="dazed" alt="dazed"></label>
+												</div>
+												<div style="clear:both; height:0px;">&nbsp;</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="esm17" name="smilerad" value="0016">
+													<label for="esm17"><img src="images/smiley/dance.png" title="dance" alt="dance"></label>
+												</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="esm18" name="smilerad" value="0017">
+													<label for="esm18"><img src="images/smiley/drink.png" title="drink" alt="drink"></label>
+												</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="esm19" name="smilerad" value="0018">
+													<label for="esm19"><img src="images/smiley/cowboy.png" title="cowboy" alt="cowboy"></label>
+												</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="esm20" name="smilerad" value="0019">
+													<label for="esm20"><img src="images/smiley/devil.png" title="devil" alt="devil"></label>
+												</div>
+												<div style="clear:both; height:0px;">&nbsp;</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="esm21" name="smilerad" value="0020">
+													<label for="esm21"><img src="images/smiley/disapointed.png" title="disapointed" alt="disapointed"></label>
+												</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="esm22" name="smilerad" value="0021">
+													<label for="esm22"><img src="images/smiley/love.png" title="love" alt="love"></label>
+												</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="esm23" name="smilerad" value="0022">
+													<label for="esm23"><img src="images/smiley/love-over.png" title="love-over" alt="love-over"></label>
+												</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="esm24" name="smilerad" value="0023">
+													<label for="esm24"><img src="images/smiley/party.png" title="party" alt="party"></label>
+												</div>
+												<div style="clear:both; height:0px;">&nbsp;</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="esm25" name="smilerad" value="0024">
+													<label for="esm25"><img src="images/smiley/thinking.png" title="thinking" alt="thinking"></label>
+												</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="esm26" name="smilerad" value="0025">
+													<label for="esm26"><img src="images/smiley/shock.png" title="shock" alt="shock"></label>
+												</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="esm27" name="smilerad" value="0026">
+													<label for="esm27"><img src="images/smiley/yin-yang.png" title="yin-yang" alt="yin-yang"></label>
+												</div>
+												<div class="one-forth-responsive">
+													<input class="radiobox" type="radio" id="esm28" name="smilerad" value="0027">
+													<label for="esm28"><img src="images/smiley/yawn.png" title="yawn" alt="yawn"></label>
+												</div>
+											</div>
+											<span id = "ratingId" style="display: none"></span>
+											<a href="javascript:void(0)" id="updateRating" class="pageapp-login-button button">Save</a>
+										</div>
+									</div>
+								</div>
+								<!--bootbox model delete-->
+								<div class="simple-modal-content delete-modal-content">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5>Are you sure want to delete this ?</h5>
+											<a href="#" class="modal-close"><i class="fa fa-times"></i></a>
+										</div>
+										<div class="modal-body">
+											<span id="deleteId" style="display: none"></span>
+											<a href="javascript:void(0)" id="Deleterating" class="pageapp-login-button button" style="width: 40%;">OK</a>
+											<a href="javascript:void(0)" class="pageapp-login-button button modal-close" style="width: 40%; color:#ffffff !important;">Cancel</a>
+										</div>
+									</div>
+								</div>
+								<!--ends-->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<a href="#" class="back-to-top-badge"><i class="fa fa-long-arrow-up"></i></a>
+		</div>
+		<div id="footer-fixed" class="not-active"></div>
+		<!-- App JS  -->
+		<script type="text/javascript" src="scripts/viewmodels/framework-plugins.js"></script>
+		<!--Plugin for Date Picker Calender-->
+		<script type="text/javascript" src="lib/js/bootstrap-datetimepicker.js"></script>
+		<script>
+			$('document').ready(function(){
+				
+			});
+		</script>
+		<!-- Custom Js   -->
+		<script type="text/javascript" src="scripts/viewmodels/custom.js"></script>
+		<script type="text/javascript" src="scripts/services/datasource-service.js"></script>
+		<script type="text/javascript" src="scripts/viewmodels/rating.js"></script>
+		<script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="scripts/viewmodels/geolocation.js"></script>
+		<script type="text/javascript" src="scripts/viewmodels/notification.js"></script>
+		<script>
+			document.addEventListener("deviceready", onDeviceReady, false);
+			function onDeviceReady()
+			{
+			//get location
+			     onDeviceLocation();
+			//get notitfication
+			getNotification();
+			}
+		</script>
+	</body>
+</html>
